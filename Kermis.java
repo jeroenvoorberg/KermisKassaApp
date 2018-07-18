@@ -4,54 +4,43 @@ import java.util.Scanner;
 
 public class Kermis {
 
-    public static void main (String [] args) {
-        Scanner sc = new Scanner(System.in);
+    private Attractie[] attracties;
+    private Kassa kassa;
 
+    Kermis() {
         Botsautos botsauto = new Botsautos();
-//        System.out.println(botsauto.prijs);
         Spin spin = new Spin();
-        Attractie spiegelpaleis = new Spiegelpaleis();
-        Attractie spookhuis = new Spookhuis();
-        Attractie hawaii = new Hawaii();
-        Attractie ladderklimmen = new Ladderklimmen();
-        Kassa kassa = new Kassa();
-        System.out.println("Welke attractie?");
+        Spiegelpaleis spiegelpaleis = new Spiegelpaleis();
+        Spookhuis spookhuis = new Spookhuis();
+        Hawaii hawaii = new Hawaii();
+        Ladderklimmen ladderklimmen = new Ladderklimmen();
+        kassa = new Kassa();
 
-        int keuze = sc.nextInt();
+        attracties = new Attractie[7];
+        attracties[1] = new Botsautos();
+        attracties[2] = spin;
+    }
 
-        switch (keuze) {
-            default:
-                System.out.println("dit is me niet bekend");
-            case 1:
-                System.out.println("U heeft gekozen voor de Botsauto's!");
-                kassa.omzet(botsauto.prijs);
-                botsauto.draaien();
-                break;
-            case 2:
-                System.out.println("U heeft gekozen voor Spin");
-                kassa.omzet(spin.prijs);
-                spin.draaien();
-                break;
-            case 3:
-                System.out.println("U heeft gekozen voor het Spiegelpaleis");
-                kassa.omzet(spiegelpaleis.prijs);
-                spiegelpaleis.draaien();
-                break;
-            case 4:
-                System.out.println("U heeft gekozen voor het Spookhuis");
-                kassa.omzet(spookhuis.prijs);
-                spookhuis.draaien();
-                break;
-            case 5:
-                System.out.println("U heeft gekozen voor Hawaii");
-                kassa.omzet(hawaii.prijs);
-                hawaii.draaien();
-                break;
-            case 6:
-                System.out.println("U heeft gekozen voor Ladderklimmen");
-                kassa.omzet(ladderklimmen.prijs);
-                ladderklimmen.draaien();
-                break;
+    int ticketGekocht(int keuzeVoorAttractie, int keuzeVoorPersonen) {
+
+        if (keuzeVoorAttractie < 1 || keuzeVoorAttractie > attracties.length - 1) {
+            System.out.println("dit is me niet bekend");
+        } else {
+            Attractie attractie = attracties[keuzeVoorAttractie];
+            System.out.println("U heeft gekozen voor de " + attractie.naam);
+            kassa.omzet(attractie.getPrijs());
+            attractie.draaien();
         }
+    }
+
+    public static void main (String [] args) {
+        Kermis kermis = new Kermis();
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Welke attractie?");
+        int keuzeVoorAttractie = sc.nextInt();
+        System.out.println("Hoeveel personen willen in de attractie?");
+        int keuzeVoorPersonen = sc.nextInt();
+        kermis.ticketGekocht(keuzeVoorAttractie-1, keuzeVoorPersonen);
+
     }
 }
