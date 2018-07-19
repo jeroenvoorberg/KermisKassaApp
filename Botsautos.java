@@ -13,5 +13,4 @@ public class Botsautos extends Attractie{
         return prijs;
     }
 
-
 }
