@@ -1,7 +1,5 @@
 package Kermis;
 
-import java.util.Scanner;
-
 public class Kassa {
     double totaleOmzet;
 
@@ -11,6 +9,9 @@ public class Kassa {
 //        double omzet = prijs *
 //        System.out.println(omzet);
 //        System.out.println(Botsautos.prijs);
-//        return omzet;
+        return prijs;
     }
+
+
+
 }
