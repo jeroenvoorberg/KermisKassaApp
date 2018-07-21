@@ -7,11 +7,11 @@ public class Hawaii extends Attractie{
     int attractieOmzet;
 
     public int getPrijs(){
-        int prijs1 = prijs;
+        int prijs1 = this.prijs;
         return prijs1;
     }
     public String getNaam() {
-        String naam1 = naam;
+        String naam1 = this.naam;
         return naam1;
     }
 }
