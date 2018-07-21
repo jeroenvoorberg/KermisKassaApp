@@ -3,10 +3,9 @@ package Kermis;
 public abstract class Attractie {
 
     String naam;
-    abstract double getPrijs();
+    double prijs;
     int oppervlakte;
 
-    public void draaien() {
-        System.out.println("De attractie " + naam + " draait!");
-    }
+    public abstract double getPrijs();
+    public abstract String getNaam();
 }

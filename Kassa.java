@@ -1,17 +1,13 @@
 package Kermis;
 
 public class Kassa {
-    double totaleOmzet;
+    private double omzetPerAttractie[]  = new double[7];
+    int gekochteTickets;
 
-    public double omzet (double prijs) {
-
-//        System.out.println(ba.prijs);
-//        double omzet = prijs *
-//        System.out.println(omzet);
-//        System.out.println(Botsautos.prijs);
-        return prijs;
+    public double omzet (double prijs, int i) {
+        double omzet = prijs * i;
+        totaleOmzet = totaleOmzet + omzet;
+        return omzet;
     }
-
-
 
 }

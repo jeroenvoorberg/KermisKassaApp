@@ -3,10 +3,14 @@ package Kermis;
 
 public class Hawaii extends Attractie{
     String naam = "Aloha";
-    double prijs = 2.90;
+    private static final double prijs = 2.90;
 
     public double getPrijs(){
-        return prijs;
+        double prijs1 = prijs;
+        return prijs1;
     }
-
+    public String getNaam() {
+        String naam1 = naam;
+        return naam1;
+    }
 }
