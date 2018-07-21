@@ -2,10 +2,10 @@ package Kermis;
 
 public class Botsautos extends Attractie{
     String naam = "Botsautos";
-    private static final double prijs = 2.50;
+    private static final int prijs = 250;
 
-    public double getPrijs(){
-        double prijs1 = prijs;
+    public int getPrijs(){
+        int prijs1 = prijs;
         return prijs1;
     }
     public String getNaam() {

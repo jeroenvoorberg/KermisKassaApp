@@ -3,13 +3,13 @@ package Kermis;
 public class Ladderklimmen extends Attractie{
 
     String naam = "De Ladder-zat";
-    private static final double prijs = 5.00;
+    private static final int prijs = 500;
     int oppervlakte = 5;
 
-    public double getPrijs(){
-        double prijs1 = prijs;
+    public int getPrijs(){
+        int prijs1 = prijs;
         return prijs1;
-        }
+    }
     public String getNaam() {
         String naam1 = naam;
         return naam1;
