@@ -17,7 +17,11 @@ public class Spin extends RisicoRijkeAttracties {
     }
 
     boolean opstellingsKeuring(){
-        return true;
+        boolean keuren = false;
+        if (aantalVerkochteTickets > 5) {
+            keuren = true;
+        }
+        return keuren;
     }
 
 }

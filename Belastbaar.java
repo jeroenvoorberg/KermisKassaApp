@@ -1,7 +1,7 @@
 package Kermis;
 
 interface GokAttractie{
-    void gebruiken();
+    void belastbaar();
     default void proberen() {
         System.out.println("default gedrag");
     }

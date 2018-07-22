@@ -18,7 +18,10 @@ public class Hawaii extends RisicoRijkeAttracties{
     }
 
     boolean opstellingsKeuring(){
-
-        return true;
+        boolean keuren = false;
+        if (aantalVerkochteTickets > 10) {
+            keuren = true;
+        }
+        return keuren;
     }
 }

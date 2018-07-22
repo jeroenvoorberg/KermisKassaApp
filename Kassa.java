@@ -55,6 +55,11 @@ public class Kassa {
             totaleOmzet = totaleOmzet + (kvp * attractie.getPrijs());
             omzetPerRisicoAttractie[kva] = omzetPerRisicoAttractie[kva] + (kvp * attractie.getPrijs());
             gekochteTickets =  gekochteTickets + kvp;
+            attractie.aantalVerkochteTickets = attractie.aantalVerkochteTickets + kvp;
+            System.out.println(attractie.aantalVerkochteTickets);
+            if (attractie.opstellingsKeuring()) {
+                System.out.println("De " + attractie.getNaam() + " moet gekeurd worden!");
+            }
         }
     }
 
@@ -71,12 +76,12 @@ public class Kassa {
                 while (doorgaan) {
                     System.out.println("U heeft de keuze uit: \n1 -- Botsauto's \n2 -- Spiegelpaleis  \n3 -- Spookhuis  \n4 -- Ladderklimmen \n5 -- Spin  \n6 -- Hawaii  \n7 -- Quit \nVoer Uw Keuze in:");
                     int keuzeVoorAttractie = sc.nextInt();
-                    if (keuzeVoorAttractie < 0 || keuzeVoorAttractie > attracties.length +1) {
+                    if (keuzeVoorAttractie < 0 || keuzeVoorAttractie > attracties.length+2) {
                         System.out.println("Dit is niet bekend.");
                     }
                     else if (keuzeVoorAttractie == 7) {
                         doorgaan = false;
-                    } else if ((keuzeVoorAttractie > 0 || keuzeVoorAttractie < attracties.length +1)){
+                    } else if ((keuzeVoorAttractie > 0 && keuzeVoorAttractie < attracties.length)){
                         System.out.println("De omzet van de/het " + attracties[keuzeVoorAttractie].getNaam() + " is " + omzetPerAttractie[keuzeVoorAttractie] + " cent.");
                     }
 
