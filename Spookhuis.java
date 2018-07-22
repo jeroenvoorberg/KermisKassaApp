@@ -3,6 +3,7 @@ package Kermis;
 public class Spookhuis extends Attractie {
     String naam = "ScaryMary";
     private static final int prijs = 320;
+    int attractieOmzet;
 //    int oppervlakte = 5;
 
     public int getPrijs(){
